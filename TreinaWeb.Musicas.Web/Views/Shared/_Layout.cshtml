@@ -10,30 +10,7 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li style="padding-top: 15px; padding-bottom: 15px; color: #9d9d9d;">Olá, @User.Identity.Name</li>
-                        <li style="position:">@Html.ActionLink("Fazer logoff", "Logoff", "Usuarios")</li>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Fazer login", "Login", "Usuarios")</li>
-                    }
-                </ul>
-            </div>
+            @Html.Partial("_Menu")
         </div>
     </div>
     <div class="container body-content">

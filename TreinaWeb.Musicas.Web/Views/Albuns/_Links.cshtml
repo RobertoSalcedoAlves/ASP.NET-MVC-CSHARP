@@ -1,0 +1,8 @@
+﻿@model TreinaWeb.Musicas.Web.ViewModels.Album.AlbumExibicaoViewModel
+
+@Html.ActionLink("Details", "Details", new { id = Model.Id })
+@if (User.IsInRole("ADMINISTRADOR"))
+{
+    @Html.ActionLink(" | Edit | ", "Edit", new { id = Model.Id })
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+}
